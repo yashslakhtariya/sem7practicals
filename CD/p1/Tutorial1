@@ -1,0 +1,20 @@
+1. Preprocessing
+
+gcc -E code.c
+
+
+2. Compiler generates assembly code (dot s file)
+
+gcc -S code.c
+
+
+3. Assembler generates object code (dot o file)
+
+gcc -c code.s
+
+
+4. Linker and Loader generates (dot out file)
+
+gcc -L try code.o
+
+
