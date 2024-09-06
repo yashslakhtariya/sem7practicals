@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: yashlani-node1-app
+  name: yashlani-gnu-service
+  namespace: default
+spec:
+  type: NodePort  
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000    
+  selector:
+    app: yashlani-node1-app

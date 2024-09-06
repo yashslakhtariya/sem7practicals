@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Siriphop Sangseedang",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 56.67, "left": 8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -115.86,
+      "left": 266.09,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -115.17,
+      "left": 214.44,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -114.5,
+      "left": 179.56,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "mega:5V", "led3:A", "red", [ "v-427.5", "h41.45", "v113.71" ] ],
+    [ "mega:5V", "led2:A", "red", [ "v-427.5", "h82.71", "v112.7" ] ],
+    [ "mega:5V", "led1:A", "red", [ "v-427.5", "h135.03", "v114.72" ] ],
+    [ "led1:C", "mega:0", "orange", [ "v73.86", "h-12.29" ] ],
+    [ "led2:C", "mega:1", "violet", [ "v92.37", "h20.16" ] ],
+    [ "led3:C", "mega:2", "blue", [ "v110.9", "h45.44" ] ]
+  ],
+  "dependencies": {}
+}

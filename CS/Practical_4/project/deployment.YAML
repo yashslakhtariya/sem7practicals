@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yashlanu-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yashlani-node1-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: yashlani-node1-app
+    spec:
+      containers:
+      - name: nodecontainer
+        image: au.icr.io/yashlani-nmspc/yslnewimage:1.0
+        ports:
+        - containerPort: 3000

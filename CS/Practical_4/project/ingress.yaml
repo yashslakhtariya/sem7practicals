@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: yashlani-gnu-service-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: public-iks-k8s-nginx
+  tls:
+  - hosts:
+    - mycluster-dal10-b3c-4x16-3e4769f510db5aaf1089354e49621b41-0000.au-syd.containers.appdomain.cloud
+    secretName: mycluster-dal10-b3c-4x16-3e4769f510db5aaf1089354e49621b41-0000
+  rules:
+  - host: mycluster-dal10-b3c-4x16-3e4769f510db5aaf1089354e49621b41-0000.au-syd.containers.appdomain.cloud
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: gnu-service
+            port:
+              number: 3000
