@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: yashlanu-node-prjkt
+  name: yashlani-prjkt-service
+  namespace: default
+spec:
+  type: NodePort  
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000    
+  selector:
+    app: yashlanu-node-prjkt
