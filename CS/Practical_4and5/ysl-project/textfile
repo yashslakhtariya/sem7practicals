@@ -1,0 +1,10 @@
+  # IBM Container Registry
+  - name: "au.icr.io/*"
+    policy:
+        mutateImage: false
+        simple:
+          requirements:
+          - type: "signedBy"
+            keySecret: my-pubkey
+      
+      

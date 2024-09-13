@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "YASH LAKHTARIYA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -96.66,
+      "left": 201.93,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "led1:C", "uno:GND.1", "blue", [ "v0.06", "h-129.93" ] ],
+    [ "led1:A", "uno:3", "violet", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

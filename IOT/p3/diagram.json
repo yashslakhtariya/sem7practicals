@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "author": "YASH LAKHTARIYA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 98.67, "left": -98.67, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -44, "left": 21.42, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -9, "left": -32.67, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "pir1:VCC", "uno:5V", "red", [ "v19", "h-175", "v261", "h181" ] ],
+    [ "pir1:OUT", "uno:2", "blue", [ "v37", "h68" ] ],
+    [ "uno:13", "led1:A", "blue", [ "v-62", "h-47" ] ],
+    [ "uno:GND.1", "led1:C", "orange", [ "v-54", "h-33" ] ],
+    [ "pir1:GND", "uno:GND.1", "violet", [ "v31", "*", "v-28" ] ]
+  ],
+  "dependencies": {}
+}
