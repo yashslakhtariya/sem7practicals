@@ -1,5 +1,5 @@
 apiVersion: portieris.cloud.ibm.com/v1
-kind: ClusterImagePolicy
+kind: ImagePolicy
 metadata:
   name: img-policy-g3-yash
 spec:

@@ -1,0 +1,12 @@
+apiVersion: portieris.cloud.ibm.com/v1
+kind: ImagePolicy
+metadata:
+  name: img-policy-g3-yashlo-vuln
+spec:
+  repositories:
+    # My registry
+    - name: "au.icr.io/*"
+      policy:
+        vulnerability:
+          ICCRVA:
+            enabled: true
