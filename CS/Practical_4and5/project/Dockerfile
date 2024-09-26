@@ -1,20 +1,13 @@
-FROM node:12-alpine
+FROM node:18-alpine
 
-#RUN command to make sure to grant necessary permission into node_module and app folders, so that when npm install can be executed.
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+# Set the working directory inside the container
+WORKDIR /app
 
-#WORKDIR command to set working directory
-WORKDIR /home/node/app
+# Copy only the necessary files to the container
+COPY app.js .
 
-#COPY command to copy package.json file.
-COPY package*.json ./
-
-USER node
-
-RUN npm install
-
-#Copy your application code with the appropriate permissions to the application directory on the container:
-COPY --chown=node:node . .
+# Install only production dependencies (none in this case, so it will be quick)
+RUN npm install express
 
 #EXPOSE command to expose port
 EXPOSE 3000
