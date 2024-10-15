@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yashlana-coursenu-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yashlano-course
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: yashlano-course
+    spec:
+      containers:
+      - name: nodecontainer
+        image: docker.io/yashslakhtariya/yslcourse:1.0
+        ports:
+        - containerPort: 3000
