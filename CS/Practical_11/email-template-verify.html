@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gotham', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #464646;
+            font-size: 18px;
+        }
+        
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-spacing: 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        td {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #b75969;
+            padding: 20px;
+        }
+
+        .header img {
+            object-fit: contain;
+            height: 77px;
+        }
+
+        .content strong {
+            color: #333;
+            font-size: 20px;
+        }
+
+        .verify-button {
+            display: inline-block;
+            background-color: #005093;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .verify-button:hover {
+            background-color: #003f74;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #757575;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #b75969;
+            padding: 10px;
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        a {
+            color: #b75969;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="header">
+            <td>
+                <img src="%{display.logo}" alt="logo">
+            </td>
+        </tr>
+        <tr>
+            <td class="content">
+                <strong>Cham sa %{user.firstName}!,<br><br>Jodava maate aabhar!</strong><br><br>
+                Ahiya neche click karo to verify thase, nakar dhabadko!<br><br>
+                <a href="%{verify.link}" class="verify-button">Verify</a><br><br>
+                <span class="note">
+                    Note: Jaldi karo nakar %{linkExpiration.hours} kalak ma dhabadko! Button nahi dabatu? To neche link ne copy paste karo tamara browser na mathe.
+                </span><br><br>
+                <a href="%{verify.link}">%{verify.link}</a><br><br>
+                Jo tame sign up nathi karyu to tel vada thaao, you can ignore this email.<br><br>
+                Aabhar tamaro!
+            </td>
+        </tr>
+        <tr class="footer">
+            <td>&copy; 2024 Your Company. All Rights Reserved.</td>
+        </tr>
+    </table>
+</body>
+</html>
