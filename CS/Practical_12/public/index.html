@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simple Node Web App</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #faf3f5;
+            font-family: 'Itim', cursive;
+        }
+        .accent-color {
+            color: #faf3f5;
+        }
+        .accent-background {
+            background-color: #b75969;
+        }
+        .content-box {
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 250px;
+        }
+        .btn-custom {
+            background-color: #b75969;
+            color: #faf3f5;
+            border-radius: 16px;
+            margin-top: 100px;
+        }
+        .btn-large {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l6 offset-l3 accent-background content-box center-align">
+                <h1 class="accent-color">Hello from the app!</h1>
+                <h3 id="user" class="accent-color"></h3>
+            </div>
+            <div class="col s12 center-align">
+                <a href="/appid/login" id="login" class="btn btn-custom btn-large">Login</a>
+                <a href="/appid/logout" id="logout" class="btn btn-custom btn-large" style="display: none;">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $().ready(() => {
+            $.get("/api/user")
+                .then((resp) => {
+                    $("#user").text("Hello " + resp.user.name);
+                    $("#logout").show();
+                    $("#login").hide();
+                });
+        });
+    </script>
+
+</body>
+
+</html>
