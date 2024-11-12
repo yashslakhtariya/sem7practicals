@@ -4,7 +4,7 @@ const APIStrategy = require('ibmcloud-appid').APIStrategy;
 const app = express();
 app.use(passport.initialize());
 passport.use(new APIStrategy({
-	oauthServerUrl: "https://eu-gb.appid.cloud.ibm.com/oauth/v4/09229dcc-ecf6-4631-a54e-4da3629e3210",
+	oauthServerUrl: "https://au-syd.appid.cloud.ibm.com/oauth/v4/87b71da3-5ccd-4dc0-b003-7cdc47f4a3bd",
 }));
 
 // Protect the whole app
