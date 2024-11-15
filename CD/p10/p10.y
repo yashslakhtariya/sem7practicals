@@ -15,7 +15,7 @@
 /* Rule Section */
 %% 
 E : T	 {
-				printf("Result = %d\n", $$);
+				printf("\n\tResult = %d\n\n", $$);
 				return 0;
 			}
 
@@ -32,7 +32,7 @@ T :
 %%
 
 int main() {
-	printf("Enter the expression\n");
+	printf("\nEnter the expression : ");
 	yyparse();
 return 0;
 }

@@ -1071,7 +1071,7 @@ yyreduce:
   case 2: /* E: T  */
 #line 17 "p10.y"
          {
-				printf("Result = %d\n", yyval);
+				printf("\n\tResult = %d\n\n", yyval);
 				return 0;
 			}
 #line 1078 "p10.tab.c"
@@ -1329,7 +1329,7 @@ yyreturnlab:
 
 
 int main() {
-	printf("Enter the expression\n");
+	printf("\nEnter the expression : ");
 	yyparse();
 return 0;
 }
